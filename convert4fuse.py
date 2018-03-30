@@ -12,7 +12,9 @@ forcdir = '/glade/p/work/manab/ff/islandpark/rawinput'
 concatdir = '/glade/p/work/manab/ff/islandpark/rawinputconcat/'
 obsfile = '/glade/p/work/manab/ff/forcinggeneration/pilot_basin_data/isli_bor_flow_data.txt'
 outdir = '/glade/p/work/manab/ff/islandpark/inputnew/'
-obsvar = 'dailydisc'
+obsvar = 'unregflow'
+starttime = '1970-01-01'
+endtime = '2016-12-31'
 
 def calcWeightedAvg(ncdat, varname):
     '''
@@ -47,17 +49,6 @@ def calcPET(lat, time, tmin, tmax, tmean):
     pet = np.array(pet)
     return(pet)
 
-def impqobs(file, starttime, endtime):
-    '''
-    Import Flow observation for the period
-    '''
-    dat = pd.read_table(file, skiprows = 14, header = None, 
-                    names = ['time', 'gaugeheight', 'resinflow', 'dailydisc', 'unregflow'])
-    dat['time'] = pd.to_datetime(dat['time'])
-    dat = dat.set_index(['time'])   #Set time as index
-    dat = dat.loc[starttime:endtime]
-    return(dat)
-    
 def ncextract(ncfile):
     '''
     Open each forcing netCDF file
@@ -103,6 +94,19 @@ if __name__ == '__main__':
     # Processing forcing files
     concatforcfiles = glob.glob(concatdir + '/*.nc') #List of all files
     concatforcfiles.sort()
+
+
+    #Import Flow observation for the period
+    obs = pd.read_table(obsfile, skiprows = 14, header = None, 
+            names = ['time', 'gaugeheight', 'resinflow', 'dailydisc', 'unregflow'])
+    obs['time'] = pd.to_datetime(obs['time'])
+    obs = obs.set_index(['time'])   #Set time as index
+    obs = obs.loc[starttime:endtime]
+    #obs = pd.to_numeric(obs[obsvar].values)    # CFS
+    obs = pd.to_numeric(obs['unregflow'], errors = 'coerce')
+    obs[obs<0] = 0  #Convert all negative values to zero 
+    obs = ((obs*0.028316847)/1279729289.0710001)*8.64e+7  #CFS -> CMS(*0.028316847) -> m/s (/1279729289.0710001) -> mm/day (*8.64e+7)
+    obs2 = np.reshape(obs,(obs.shape[0],1,1))
     
     # Processes all concatenated files and puts them in the final input directory
     for count, value in enumerate(concatforcfiles):
@@ -113,19 +117,13 @@ if __name__ == '__main__':
         pet = np.reshape(pet,(pet.shape[0],1,1))      #mm/day
         tmean = np.reshape(tmax,(tmean.shape[0],1,1)) # degree C
 
-        #Extract observation for that period
-        maxtime = forcdat['time'].max()
-        mintime = forcdat['time'].min()
-        obs = impqobs(obsfile, mintime, maxtime)
-        obs = pd.to_numeric(obs[obsvar].values)    # CFS
-        obs = ((obs*0.028316847)/1279729289.0710001)*8.64e+7  #CFS -> CMS(*0.028316847) -> m/s (/1279729289.0710001) -> mm/day (*8.64e+7) 
-        obs = np.reshape(obs,(obs.shape[0],1,1))
+        obs2 = np.reshape(obs,(obs.shape[0],1,1))
         
         # Create new netCDF file
         f = xr.Dataset({'pr': (['time','latitude', 'longitude'],  prcp),
                         'pet': (['time','latitude', 'longitude'],  pet),
                         'temp': (['time','latitude', 'longitude'],  tmean),
-                        'q_obs': (['time','latitude', 'longitude'],  obs)
+                        'q_obs': (['time','latitude', 'longitude'],  obs2)
                        },
                        coords={'time': time,
                                'latitude':[lat],
