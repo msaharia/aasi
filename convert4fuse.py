@@ -115,7 +115,7 @@ if __name__ == '__main__':
         pet = calcPET(lat, time, tmin, tmax, tmean)
         prcp = np.reshape(prcp,(prcp.shape[0],1,1))   #mm/day
         pet = np.reshape(pet,(pet.shape[0],1,1))      #mm/day
-        tmean = np.reshape(tmax,(tmean.shape[0],1,1)) # degree C
+        tmean = np.reshape(tmean,(tmean.shape[0],1,1)) # degree C
 
         obs2 = np.reshape(obs,(obs.shape[0],1,1))
         
