@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import xarray as xr
 import netCDF4
 import numpy as np
