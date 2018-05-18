@@ -132,5 +132,6 @@ if __name__ == '__main__':
                                'longitude':[lon]}
                       )
 
-        f.to_netcdf(outdir+os.path.basename(value))  
+        f2 = f.where(f['pet']>=0, 0)  #Replacing negative PET values with zero
+        f2.to_netcdf(outdir+os.path.basename(value))  
         print("Creating final FUSE forcing file " , count+1, " of ", len(concatforcfiles))
