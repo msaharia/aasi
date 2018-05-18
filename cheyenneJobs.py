@@ -1,16 +1,8 @@
-
-# coding: utf-8
-
-# In[166]:
-
+#!/usr/bin/env python
 
 import os, shutil
 import subprocess
 import glob
-
-
-# In[2]:
-
 
 # Directories
 masterdir = '/glade/p/work/manab/ff/islandpark/'
@@ -20,17 +12,14 @@ pbsdname = 'pbsscripts'
 
 #FUSE
 fuseexe = '/glade/p/work/manab/ff/newfuse/fuse/bin/fuse.exe'
-configtpl = '/glade/p/work/manab/ff/islandpark/fm_sacsma.txt' #Main Config template
+configtpl = '/glade/p/work/manab/ff/islandpark/fm_prms.txt' #Main Config template
 inputInfoTpl = '/glade/p/work/manab/ff/islandpark/settings/template_input_info.txt'  #Input info template
 forcdir = '/glade/p/work/manab/ff/islandpark/inputnew'
-fusemode = 'run_def'   #Options
+fusemode = 'run_def'   #Options: run_def for simulation and calib_sce for ALL simulations
 simstarttime = '2017'
 simendtime = '2017'
 evalstarttime = '2017'
 evalendtime = '2017'
-
-
-# In[3]:
 
 
 def concatDir(dir, subdir):
@@ -53,16 +42,6 @@ def purgeDir(folder):
         except Exception as e:
             print(e)
 
-#def configFile(file):
-#    '''
-#    Writes config files for each ensemble run
-#    '''
-#    with open(file, "rt") as fin:
-#        with open('/glade/p/work/manab/ff/islandpark/fm_template2.txt', "wt") as fout:
-#            for line in fin:
-#                print(line)
-#                fout.write(line.replace('SIMSTART', simstarttime)
- 
 def forcingFiles(folder):
     '''
     Find all forcing files for each input
@@ -70,10 +49,6 @@ def forcingFiles(folder):
     files = glob.glob(folder + '/*nc')
     files = [x for x in files if "elev_bands" not in x]
     return(files)
-
-
-# In[169]:
-
 
 if __name__ == '__main__':
     logdir = concatDir(masterdir, logdname)
@@ -104,7 +79,7 @@ if __name__ == '__main__':
         
         runcoms.append(runcomx)
 
-        with open('/glade/p/work/manab/ff/islandpark/settings/template_input_info.txt', "rt") as fin:
+        with open(inputInfoTpl, "rt") as fin:
             with open(outfile, "wt") as fout:
                 for line in fin:
                     fout.write(line.replace('FORCTEMP', outfilename1))
@@ -119,8 +94,6 @@ if __name__ == '__main__':
                 for item in jobchunk:
                     fout.write("{}\n".format(item))
 
-
-# In[191]:
 
 
 
