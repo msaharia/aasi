@@ -1,0 +1,13 @@
+#!/bin/bash -u
+#PBS -A P48500028
+#PBS -N islandpark10K 
+#PBS -m a
+#PBS -q regular
+#PBS -l walltime=00:05:00
+#PBS -l select=1:ncpus=36:mpiprocs=36
+#PBS -o ./log/LOGNUMBER.out
+#PBS -e ./log/LOGNUMBER.err
+mkdir -p /glade/scratch/manab/temp
+export TMPDIR=/glade/scratch/manab/temp
+export MPI_SHEPHERD=true
+mpiexec_mpt launch_cf.sh JOBLIST 
