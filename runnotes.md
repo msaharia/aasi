@@ -59,12 +59,9 @@
 * New output stored here: `/gpfs/fs1/work/manab/ff/islandpark/allout/calib100`
 * Run final with best calibrated parameter set: `/gpfs/fs1/work/manab/ff/islandpark/calib100.bash`
 
-# Calibration
-* Moved `namelists` to setup
-* Change `/glade/p/work/manab/ff/islandpark/settings/namelist.fuse_calib_control`. Replace by `KGE, NSE, RMSE`
-* /glade/p/work/manab/ff/newfuse/fuse/bin/fuse.exe /glade/p/work/manab/ff/islandpark/fm_prms.txt 001 xyx calib_sce (For 1 ensemble)
-* Here `xyx = 111(prms), 222(hechms), 333(vic), 444(sacsma)`. Different decision files have been created.
-* `/glade/p/work/manab/ff/islandpark/pbscalib.sh` - Calibrates for 1 ensemble for 3 metrics - KGE, RMSE
+# Event Modeling
+
+# DELSA
 
 # Notes
 * Here, `123` dictates what decision file FUSE looks for. i.e. `/glade/p/work/manab/ff/islandpark/settings/fuse_zDecisions_003.txt`. I think it just ignores the `'fuse_zDecisions_902.txt'        ! M_DECISIONS = definition of model decisions` in the main config file
