@@ -28,17 +28,17 @@
 * Use real elevation bands provided by USBR here: `/glade/p/work/manab/ff/islandpark/ip_elev_bands_usbr.nc`
 
 # Model Configurations
-| FUSE configuration                    | PRMS        | HECHMS | VIC                             | SACSMA |
-| ------------------------------------- | ----------- | ------ | ------------------------------- | ------ |
-| rainfall error                        | tension2_1  |        |  single state var (onestate_1)  |        |
-| upper-layer architecture              |             |        |                                 |        |
-| lower-layer architecture and baseflow |             |        |                                 |        |
-| surface runoff                        |             |        |                                 |        |
-| percolation                           |             |        |                                 |        |
-| evaporation                           |             |        |                                 |        |
-| interflow                             |             |        |                                 |        |
-|  time delay in runoff                 |             |        |                                 |        |
-| snow model                            |             |        |                                 |        |
+| FUSE configuration                    | PRMS                                                               | HECHMS | VIC                             | SACSMA                                 |
+| ------------------------------------- | ------------------------------------------------------------------ | ------ | ------------------------------- | -------------------------------------- |
+| rainfall error                        | tension storage sub-divided into recharge and excess (tension2_1)  |        |  single state var (onestate_1)  | tension and free storage (tension1_1)  |
+| upper-layer architecture              |                                                                    |        |                                 |                                        |
+| lower-layer architecture and baseflow |                                                                    |        |                                 |                                        |
+| surface runoff                        |                                                                    |        |                                 |                                        |
+| percolation                           |                                                                    |        |                                 |                                        |
+| evaporation                           |                                                                    |        |                                 |                                        |
+| interflow                             |                                                                    |        |                                 |                                        |
+|  time delay in runoff                 |                                                                    |        |                                 |                                        |
+| snow model                            |                                                                    |        |                                 |                                        |
 
 
 # Running FUSE
