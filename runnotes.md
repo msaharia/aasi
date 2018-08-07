@@ -53,7 +53,6 @@
 * ./submitalljobs.sh (for now)
 
 # 100 ensemble runs - Calibration
-* ./glade/work/manab/ff/islandpark/calib100.bash (For run default)
 * Joblists: /gpfs/fs1/work/manab/ff/islandpark/joblists
 * Config files: /gpfs/fs1/work/manab/ff/islandpark/fm_*_kge.txt
 * Submit calib_sce runs:  /gpfs/fs1/work/manab/ff/islandpark/submitallcalibpbsjobs.sh
