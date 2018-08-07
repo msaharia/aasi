@@ -1,6 +1,10 @@
 `source activate ff` for flood frequency conda environment
 ***
 
+# Current
+- [ ] Why isn't SAC-SMA capturing almost 20-30% off?
+- [ ] Why is FUSE-PRMS way off base?
+
 # Prepare FUSE
 * Compile SCE: `ifort -O2 -c -fixed sce_16plus.f`
 * `mkdir bin`
