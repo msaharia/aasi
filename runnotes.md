@@ -2,7 +2,7 @@
 ***
 
 # Current
-- [ ] Why isn't SAC-SMA capturing almost 20-30% off?
+- [ ] Why isnt SAC-SMA capturing almost 20-30% off?
 - [ ] Why is FUSE-PRMS way off base?
 
 # Prepare FUSE
@@ -26,6 +26,20 @@
 # Elevation bands
 * <del>Temporarily use this: `https://github.com/msaharia/aasi/blob/master/temporaryCopyElevBanFile.py` </del>
 * Use real elevation bands provided by USBR here: `/glade/p/work/manab/ff/islandpark/ip_elev_bands_usbr.nc`
+
+# Model Configurations
+| FUSE configuration                    | PRMS        | HECHMS | VIC                             | SACSMA |
+| ------------------------------------- | ----------- | ------ | ------------------------------- | ------ |
+| rainfall error                        | tension2_1  |        |  single state var (onestate_1)  |        |
+| upper-layer architecture              |             |        |                                 |        |
+| lower-layer architecture and baseflow |             |        |                                 |        |
+| surface runoff                        |             |        |                                 |        |
+| percolation                           |             |        |                                 |        |
+| evaporation                           |             |        |                                 |        |
+| interflow                             |             |        |                                 |        |
+|  time delay in runoff                 |             |        |                                 |        |
+| snow model                            |             |        |                                 |        |
+
 
 # Running FUSE
 * `./bin/fuse.exe /glade/p/work/manab/ff/islandpark/fm_902_us.txt islandpark 123 run_def`
