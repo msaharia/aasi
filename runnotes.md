@@ -28,18 +28,17 @@
 * Use real elevation bands provided by USBR here: `/glade/p/work/manab/ff/islandpark/ip_elev_bands_usbr.nc`
 
 # Model Configurations
-| FUSE configuration                    | PRMS                                                               | HECHMS | VIC                             | SACSMA                                 |
-| ------------------------------------- | ------------------------------------------------------------------ | ------ | ------------------------------- | -------------------------------------- |
-| rainfall error                        | tension storage sub-divided into recharge and excess (tension2_1)  |        |  single state var (onestate_1)  | tension and free storage (tension1_1)  |
-| upper-layer architecture              |                                                                    |        |                                 |                                        |
-| lower-layer architecture and baseflow |                                                                    |        |                                 |                                        |
-| surface runoff                        |                                                                    |        |                                 |                                        |
-| percolation                           |                                                                    |        |                                 |                                        |
-| evaporation                           |                                                                    |        |                                 |                                        |
-| interflow                             |                                                                    |        |                                 |                                        |
-|  time delay in runoff                 |                                                                    |        |                                 |                                        |
-| snow model                            |                                                                    |        |                                 |                                        |
-
+| FUSE configuration                    | PRMS                                                               | HECHMS                                                             | VIC                                                             | SACSMA                                                          |
+| ------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| rainfall error                        |                                                                    |                                                                    |                                                                 |                                                                 |
+| upper-layer architecture              | tension storage sub-divided into recharge and excess (tension2_1)  | upper layer broken  into tension and free storage (tension1_1)     |  single state var (onestate_1)                                  | upper layer broken  into tension and free storage (tension1_1)  |
+| lower-layer architecture and baseflow | baseflow resvr of unlimited size (0-HUGE), frac rate (unlimfrc_2)  | baseflow resvr of unlimited size (0-HUGE), frac rate (unlimfrc_2)  | baseflow reservoir of fixed size (fixedsiz_2)                   | tension reservoir plus two parallel tanks (tens2pll_2)          |
+| surface runoff                        | PRMS variant (fraction of upper tension storage) (prms_varnt)      | ARNO/Xzang/VIC parameterization (arno_x_vic)                       | ARNO/Xzang/VIC parameterization (arno_x_vic)                    | PRMS variant (fraction of upper tension storage) (prms_varnt)   |
+| percolation                           | water from (field cap to sat) avail for percolation (perc_f2sat)   | water from (field cap to sat) avail for percolation (perc_f2sat)   | water from (wilt pt to sat) avail for percolation (perc_w2sat)  | perc defined by moisture content in lower layer (perc_lower)    |
+| evaporation                           | root weighting (rootweight)                                        | sequential evaporation model (sequential)                          | root weighting (rootweight)                                     | sequential evaporation model (sequential)                       |
+| interflow                             | interflow (intflwsome)                                             | no interflow (intflwnone)                                          | no interflow (intflwnone)                                       | interflow (intflwsome)                                          |
+|  time delay in runoff                 | Gamma distribution with shape parameter = 2.5 (rout_gamma)         | Gamma distribution with shape parameter = 2.5 (rout_gamma)         | Gamma distribution with shape parameter = 2.5 (rout_gamma)      | Gamma distribution with shape parameter = 2.5 (rout_gamma)      |
+| snow model                            | temp_index                                                         | temp_index                                                         | temp_index                                                      | temp_index                                                      |
 
 # Running FUSE
 * `./bin/fuse.exe /glade/p/work/manab/ff/islandpark/fm_902_us.txt islandpark 123 run_def`
