@@ -60,7 +60,6 @@
 * `/glade/p/work/manab/ff/islandpark/pbscalib.sh` - Calibrates for 1 ensemble for 3 metrics - KGE, RMSE
 
 # Notes
-* Convoluted mess
 * Here, `123` dictates what decision file FUSE looks for. i.e. `/glade/p/work/manab/ff/islandpark/settings/fuse_zDecisions_003.txt`. I think it just ignores the `'fuse_zDecisions_902.txt'        ! M_DECISIONS = definition of model decisions` in the main config file
 * The new setup from Andy Newman is kept in `fusenew`
 
