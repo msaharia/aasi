@@ -53,11 +53,11 @@
 * ./submitalljobs.sh (for now)
 
 # 100 ensemble runs - Calibration
-* Joblists: /gpfs/fs1/work/manab/ff/islandpark/joblists
-* Config files: /gpfs/fs1/work/manab/ff/islandpark/fm_*_kge.txt
-* Submit calib_sce runs:  /gpfs/fs1/work/manab/ff/islandpark/submitallcalibpbsjobs.sh
-* New output stored here: /gpfs/fs1/work/manab/ff/islandpark/allout/calib100
-* Run final with best calibrated parameter set: /gpfs/fs1/work/manab/ff/islandpark/calib100.bash
+* Joblists: `/gpfs/fs1/work/manab/ff/islandpark/joblists`
+* Config files: `/gpfs/fs1/work/manab/ff/islandpark/fm_*_kge.txt`
+* Submit calib_sce runs:  `/gpfs/fs1/work/manab/ff/islandpark/submitallcalibpbsjobs.sh`
+* New output stored here: `/gpfs/fs1/work/manab/ff/islandpark/allout/calib100`
+* Run final with best calibrated parameter set: `/gpfs/fs1/work/manab/ff/islandpark/calib100.bash`
 
 # Calibration
 * Moved `namelists` to setup
