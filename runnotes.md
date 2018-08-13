@@ -58,8 +58,12 @@
 * Submit calib_sce runs:  `/gpfs/fs1/work/manab/ff/islandpark/submitallcalibpbsjobs.sh`
 * New output stored here: `/gpfs/fs1/work/manab/ff/islandpark/allout/calib100`
 * Run final with best calibrated parameter set: `/gpfs/fs1/work/manab/ff/islandpark/calib100.bash`
+* The calibrated results are plotted here: `https://github.com/msaharia/aasi/blob/master/2_calibrationresults.ipynb`
+* The calibrated parameter sets for all the models are plotted here: `https://github.com/msaharia/aasi/blob/master/3_plotParameters.ipynb`
 
 # Event Modeling
+* To be run with 5000 precip events (dry/past precip) and a calibrated parameter set from the prvious 100 ensemble run
+* 
 
 # DELSA
 
