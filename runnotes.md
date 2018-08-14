@@ -62,8 +62,26 @@
 * The calibrated parameter sets for all the models are plotted here: `https://github.com/msaharia/aasi/blob/master/3_plotParameters.ipynb`
 
 # Event Modeling
-* To be run with 5000 precip events (dry/past precip) and a calibrated parameter set from the prvious 100 ensemble run
-* 
+* To be run with 5000 precip events (dry/past precip) and a calibrated parameter set from the previous 100 ensemble run
+* Go to /eventmodeling/ folder
+    * The daily states for all models are here: `/glade/work/manab/ff/eventmodeling/daily_states` with `may-june` extracted out to another folder
+* Check in /templates/:
+    * Points to the correct "allbins" forcing folder 
+    * Correct model number: 111-444
+    * Correct namelist state file
+    * Correct constraints file
+* In /random_year_state/:
+    * Create empty files for prms, hechms, vic, sacsma
+    * These will dynamically conected to random state files from `/dailystates/mayjune/model` folder by the bash scripts
+* In  /eventmodelingfiles/:
+    * Copy best parameter sets for a random sample from the previous calibration exercise to this folder. eg. `001_x_para_sce.nc`
+    * keep the elevation information in this folder: `ip_elev_bands_usbr.nc`
+
+* Check in /settings/:
+    * Check if correct `input_state_file` is connected in the `namelist.*.restart.user_state`
+* Run scripts:
+    * *model_dry
+
 
 # DELSA
 
