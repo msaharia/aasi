@@ -15,7 +15,7 @@ A primer for partioning uncertainty in flood frequency estimates arising from th
 * Job submission: `1_qsubmit.sh` 
 
 ## Calibration results
-* FDCs, yearly maxes, KGE distributions, and time series plots: `6_multimodel_calibresults.ipynb`
+* FDCs, yearly maxes, KGE distributions, and time series plots: [Notebook](6_multimodel_calibresults.ipynb)
 * Parameter distribution for different models: [Notebook](7_plotParameters.ipynb)
 
 ## Parameter perturbation
