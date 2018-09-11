@@ -5,7 +5,7 @@ A primer for partioning uncertainty in flood frequency estimates arising from th
 ## Multi-model structures
 10 FUSE model structures are finalized.
 
-[Configurations](./modelconfigs.png)
+![Configurations](./modelconfigs.png)
 
 ## Calibration:
 
