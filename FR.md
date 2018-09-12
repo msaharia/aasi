@@ -19,5 +19,11 @@ A primer for partioning uncertainty in flood frequency estimates arising from th
 * Parameter distribution for different models: [Notebook](7_plotParameters.ipynb)
 
 ## Parameter perturbation
+* Using IQR ranges of the calibrated parameter sets, the values in the templates are replaced: `/glade/work/manab/ff/2_paramperturb/paramranges`
+* The parameter file templates are here: `/glade/work/manab/ff/2_paramperturb/templates`
+* The perturbation parameters are noted in the namelist: `namelist.sens.R`
+* The parameter sets are generated using this `1_creates_paramsets_model1.R`
+    * The complete parameter archive is stored here: `/gpfs/fs1/work/manab/ff/2_paramperturb/paramarchive`
+    * The generated parameter files which will be used in further simulations are here: `/glade/work/manab/ff/2_paramperturb/paramfiles`
 
 ## Analysis of Variance (ANOVA)
