@@ -18,6 +18,49 @@ A primer for partioning uncertainty in flood frequency estimates arising from th
 * FDCs, yearly maxes, KGE distributions, and time series plots: [Notebook](6_multimodel_calibresults.ipynb)
 * Parameter distribution for different models: [Notebook](7_plotParameters.ipynb)
 
+## Parameter list
+This is a list of all parameters in FUSE and temporary names used by scripts to perturb them
+
+|Parameter Name | Alias   |
+|---------------|---------|
+| RFERR_ADD     |         |
+| RFERR_MLT     |TEMPRFMLT|
+| RFH1_MEAN     |         |
+| RFH2_SDEV     |         |
+| RH1P_MEAN     |         |
+| RH1P_SDEV     |         |
+| RH2P_MEAN     |         |
+| RH2P_SDEV     |         |
+| MAXWATR_1     |TEMPMAXW1|
+| MAXWATR_2     |TEMPMAXW2|
+| FRACTEN       |TEMPFRACT|
+| FRCHZNE       |         |
+| FPRIMQB       |TEMPFPRIM|
+| RTFRAC1       |         |
+| PERCRTE       |         |
+| PERCEXP       |         |
+| SACPMLT       |TEMPSACPM|
+| SACPEXP       |TEMPSACEX|
+| PERCFRAC      |TEMPPERCF|
+| FRACLOWZ      |         |
+| IFLWRTE       |TEMPIFLWR|
+| BASERTE       |         |
+| QB_POWR       |         |
+| QB_PRMS       |         |
+| QBRATE_2A     |TEMPQBR2A|
+| QBRATE_2B     |TEMPQBR2B|
+| SAREAMAX      |TEMPSAMAX|
+| AXV_BEXP      |         |
+| LOGLAMB       |         |
+| TISHAPE       |         |
+| TIMEDELAY     |TEMPTIMED|
+| MBASE         |TEMPMBASE|
+| MFMAX         |TEMPMFMAX|
+| MFMIN         |TEMPMFMIN|
+| PXTEMP        |TEMPPTEMP|
+| OPG           |TEMPOPGRA|
+| LAPSE         |TEMPLAPSE|
+
 ## Parameter perturbation
 * Using IQR ranges of the calibrated parameter sets, the values in the templates are replaced: `/glade/work/manab/ff/2_paramperturb/paramranges`
 * The parameter file templates are here: `/glade/work/manab/ff/2_paramperturb/templates`
