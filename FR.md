@@ -34,23 +34,23 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 | MAXWATR_1     |TEMPMAXW1|
 | MAXWATR_2     |TEMPMAXW2|
 | FRACTEN       |TEMPFRACT|
-| FRCHZNE       |         |
+| FRCHZNE       |TEMPFRCHZ|
 | FPRIMQB       |TEMPFPRIM|
-| RTFRAC1       |         |
-| PERCRTE       |         |
-| PERCEXP       |         |
+| RTFRAC1       |TEMPFRAC1|
+| PERCRTE       |TEMPPERCR|
+| PERCEXP       |TEMPPERCE|
 | SACPMLT       |TEMPSACPM|
 | SACPEXP       |TEMPSACEX|
 | PERCFRAC      |TEMPPERCF|
 | FRACLOWZ      |         |
 | IFLWRTE       |TEMPIFLWR|
-| BASERTE       |         |
-| QB_POWR       |         |
-| QB_PRMS       |         |
+| BASERTE       |TEMPBASER|
+| QB_POWR       |TEMPQBPOW|
+| QB_PRMS       |TEMPQPRMS|
 | QBRATE_2A     |TEMPQBR2A|
 | QBRATE_2B     |TEMPQBR2B|
 | SAREAMAX      |TEMPSAMAX|
-| AXV_BEXP      |         |
+| AXV_BEXP      |TEMPAXVBE|
 | LOGLAMB       |         |
 | TISHAPE       |         |
 | TIMEDELAY     |TEMPTIMED|
