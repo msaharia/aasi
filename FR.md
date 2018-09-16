@@ -64,9 +64,9 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 ### Number of parameters per model
 |Model number   | Params  |
 |---------------|---------|
-|       1       |         |
-|       2       |         |
-|       3       |         |
+|       1       |  15     |
+|       2       |  17     |
+|       3       |  19     |
 |       4       |  17     |
 |       5       |  15     |
 |       6       |  20     |
