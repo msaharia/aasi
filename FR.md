@@ -42,7 +42,7 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 | SACPMLT       |TEMPSACPM|
 | SACPEXP       |TEMPSACEX|
 | PERCFRAC      |TEMPPERCF|
-| FRACLOWZ      |         |
+| FRACLOWZ      |TEMPFRACL|
 | IFLWRTE       |TEMPIFLWR|
 | BASERTE       |TEMPBASER|
 | QB_POWR       |TEMPQBPOW|
@@ -51,8 +51,8 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 | QBRATE_2B     |TEMPQBR2B|
 | SAREAMAX      |TEMPSAMAX|
 | AXV_BEXP      |TEMPAXVBE|
-| LOGLAMB       |         |
-| TISHAPE       |         |
+| LOGLAMB       |TEMPLOGLA|
+| TISHAPE       |TEMPTISHA|
 | TIMEDELAY     |TEMPTIMED|
 | MBASE         |TEMPMBASE|
 | MFMAX         |TEMPMFMAX|
@@ -60,6 +60,20 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 | PXTEMP        |TEMPPTEMP|
 | OPG           |TEMPOPGRA|
 | LAPSE         |TEMPLAPSE|
+
+### Number of parameters per model
+|Model number   | Params  |
+|---------------|---------|
+|       1       |         |
+|       2       |         |
+|       3       |         |
+|       4       |  17     |
+|       5       |  15     |
+|       6       |  20     |
+|       7       |  19     |
+|       8       |  18     |
+|       9       |  19     |
+|      10       |  16     |
 
 ## Parameter perturbation
 * Using IQR ranges of the calibrated parameter sets, the values in the templates are replaced: `/glade/work/manab/ff/2_paramperturb/paramranges`
