@@ -2,6 +2,13 @@
 
 A primer for partioning uncertainty in flood frequency estimates arising from three sources: forcing, parameters, and model structures.
 
+## Target
+* Precip growth curve distribution (?)
+* Perturbed initial conditions 
+* Model structures (10)
+* Parameter sets (100 calibrated sets)
+* ANOVA
+
 ## Multi-model structures
 10 FUSE model structures are finalized.
 
@@ -75,7 +82,7 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 |       9       |  19     |
 |      10       |  16     |
 
-## Parameter perturbation
+## Parameter perturbation (Not reqd. currently)
 * Using IQR ranges of the calibrated parameter sets, the values in the templates are replaced: `/glade/work/manab/ff/2_paramperturb/paramranges`
 * The parameter file templates are here: `/glade/work/manab/ff/2_paramperturb/templates`
 * The perturbation parameters are noted in the namelist: `namelist.sens.R`
@@ -85,3 +92,4 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 * *NOTE* Run all the param generation scripts using `./2_create_paramsets_allmodels.sh`
 
 ## Analysis of Variance (ANOVA)
+
