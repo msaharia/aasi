@@ -91,5 +91,10 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
     * The generated parameter files which will be used in further simulations are here: `/glade/work/manab/ff/2_paramperturb/paramfiles`
 * *NOTE* Run all the param generation scripts using `./2_create_paramsets_allmodels.sh`
 
+## Event forcings
+An annual maximum precipitation-frequency analysis using the `lmom` package in R. The precip-frequency relationship takes the form of a 4-parameter kappa defined by
+![Kappa](figures/kappa.png)
+
+
 ## Analysis of Variance (ANOVA)
 
