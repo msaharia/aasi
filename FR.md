@@ -94,6 +94,9 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 ## Event forcings
 An annual maximum precipitation-frequency analysis using the `lmom` package in R. The precip-frequency relationship takes the form of a 4-parameter kappa defined by
 ![Kappa](figures/kappa.png)
+* The kappa parameters are fitted and corresponding 48-hour bin-wise precipitation totals are computed using: `/gpfs/fs1/work/manab/ff/3_eventforcings/1_kappafit_preciptotals.R`
+* The actual event forcings are calculated for 11 percentiles, 50 bins, 100 each: `/gpfs/fs1/work/manab/ff/3_eventforcings/2_precip_event_forcing_generation.m`
+* The final event forcings are stored here: `/gpfs/fs1/work/manab/ff/3_eventforcings/precip_event_forcing` 
 
 
 ## Analysis of Variance (ANOVA)
