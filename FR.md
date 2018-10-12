@@ -99,7 +99,7 @@ An annual maximum precipitation-frequency analysis using the `lmom` package in R
 * The final event forcings are stored here: `/gpfs/fs1/work/manab/ff/3_eventforcings/precip_event_forcing` 
 * NOTE: qsub not working with MATLAB. Use screen
     * screen 
-    * /glade/u/apps/ch/opt/matlab/R2016b/bin/matlab -nosplash -nodisplay -r "run precip_event_forcing_generation.m; quit;"
+    * `/glade/u/apps/ch/opt/matlab/R2016b/bin/matlab -nosplash -nodisplay -r "run precip_event_forcing_generation.m; quit;"`
     * ctrl+a, ctrl+d -> detaches screen
     * screen -ls (shows all screens)
     * screen -r 44491 (reattaches screen)
