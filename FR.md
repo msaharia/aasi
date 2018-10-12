@@ -111,4 +111,9 @@ An annual maximum precipitation-frequency analysis using the `lmom` package in R
     * Remember which login on cheyenne
     * Kill screen: Reattach -> ctrl+a, k
 
+## Event modeling
+10 model structures, 11 percentiles, 50 bins, 100 events
+
+* Directory: `/gpfs/fs1/work/manab/ff/4_eventmodeling`
+
 ## Analysis of Variance (ANOVA)
