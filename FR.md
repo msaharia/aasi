@@ -2,6 +2,11 @@
 
 A primer for partioning uncertainty in flood frequency estimates arising from three sources: forcing, parameters, and model structures.
 
+## TO-DO
+- [ ] Fix kappa parameters and regenerate event forcings
+- [ ] String event forcings with models
+- [ ] ANOVA  
+
 ## Target
 * Precip growth curve distribution (?)
 * Perturbed initial conditions 
@@ -107,4 +112,3 @@ An annual maximum precipitation-frequency analysis using the `lmom` package in R
     * Kill screen: Reattach -> ctrl+a, k
 
 ## Analysis of Variance (ANOVA)
-
