@@ -104,6 +104,7 @@ An annual maximum precipitation-frequency analysis using the `lmom` package in R
     * screen -ls (shows all screens)
     * screen -r 44491 (reattaches screen)
     * Remember which login on cheyenne
+    * Kill screen: Reattach -> ctrl+a, k
 
 ## Analysis of Variance (ANOVA)
 
