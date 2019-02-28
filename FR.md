@@ -130,5 +130,13 @@ An annual maximum precipitation-frequency analysis using the `lmom` package in R
 ## Event modeling analysis
 * /gpfs/fs1/work/manab/ff/6_ANOVA/1_loaddata_v2
 * /gpfs/fs1/work/manab/ff/6_ANOVA/2_calcAEP
+* Generates event modeling files here: `/gpfs/fs1/work/manab/ff/5_eventmodel2/0_modelandjobgenerator.sh`
+    *`/gpfs/fs1/work/manab/ff/5_eventmodel2`
 
 ## Analysis of Variance (ANOVA)
+* The runoff data will be inserted into numpy arrays here: `/gpfs/fs1/work/manab/ff/6_ANOVA/1_loaddata_v2`
+    * Script: /gpfs/fs1/work/manab/ff/6_ANOVA/1_loaddata_v2/0_loadarrays_generator.sh
+* The AEPs will be calculated here:
+    * `/gpfs/fs1/work/manab/ff/6_ANOVA/2_calcAEP/0_dryjobcreator.sh`
+* This creates the csv file for ANOVA: `/gpfs/fs1/work/manab/ff/6_ANOVA/4_ANOVA_formatting.py`
+    * Stored here: `/gpfs/fs1/work/manab/ff/6_ANOVA/5_anovaplots`
