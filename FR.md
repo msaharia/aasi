@@ -14,6 +14,12 @@ A primer for partioning uncertainty in flood frequency estimates arising from th
 
 ![Configurations](./modelconfigs.png)
 
+## Forcing generation
+* Go to `/d3/msaharia/ffreq/forcinggeneration` in Hydro-c1 server
+* `python2.7 poly2poly/poly2poly.py  /d3/msaharia/ffreq/forcinggeneration/pilot_basin_data/IslandPark_WatershedDelineation.gpkg Id PNW/PNW_elev_0625_poly2.gpkg id GRID islandpark.nc`
+* This creates the mapping file which will be used to generate the time series
+* Creates the final input file: `python2.7 poly2poly.map_timeseries.py ../islandpark.nc /d3/hydrofcst/overtheloop/data/forcing/retro/forc_nc/PNW/ens_forc.PNW.0625.1980-1989.051.nc ../testme.nc`
+
 ## Calibration (100 ens, 10 models):
 
 * New set-up is here: `/glade/work/manab/ff/1_calib`
@@ -120,5 +126,9 @@ An annual maximum precipitation-frequency analysis using the `lmom` package in R
 * 10 model structures, 11 percentiles, 50 bins, 100 events
 * Directory: `/gpfs/fs1/work/manab/ff/5_eventmodeling`
 * Per model run: `/gpfs/fs1/work/manab/ff/5_eventmodeling`. Change model numbers manually and run
+
+## Event modeling analysis
+* /gpfs/fs1/work/manab/ff/6_ANOVA/1_loaddata_v2
+* /gpfs/fs1/work/manab/ff/6_ANOVA/2_calcAEP
 
 ## Analysis of Variance (ANOVA)
