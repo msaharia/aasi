@@ -2,11 +2,6 @@
 
 A primer for partioning uncertainty in flood frequency estimates arising from three sources: forcing, parameters, and model structures.
 
-## TO-DO
-- [ ] Fix kappa parameters and regenerate event forcings
-- [ ] String event forcings with models
-- [ ] ANOVA  
-
 ## Target
 * Precip growth curve distribution (?)
 * Perturbed initial conditions 
@@ -24,7 +19,7 @@ A primer for partioning uncertainty in flood frequency estimates arising from th
 * New set-up is here: `/glade/work/manab/ff/1_calib`
 * Job list and submission creation script: `0_createjobs.py`
     * Needs to be changed to `calib_sce` and then to `run_best` 
-* Job submission: `1_qsubmit.sh` 
+* Job submission: `qsub 1_qsubmit.sh` 
 
 ## Calibration results
 * FDCs, yearly maxes, KGE distributions, and time series plots: [Notebook](6_multimodel_calibresults.ipynb)
@@ -100,7 +95,7 @@ This is a list of all parameters in FUSE and temporary names used by scripts to 
 An annual maximum precipitation-frequency analysis using the `lmom` package in R. The precip-frequency relationship takes the form of a 4-parameter kappa defined by
 ![Kappa](figures/kappa.png)
 * The kappa parameters are fitted and corresponding 48-hour bin-wise precipitation totals are computed using: `/gpfs/fs1/work/manab/ff/3_eventforcings/1_kappafit_preciptotals.R`
-* The actual event forcings are calculated for 11 percentiles, 50 bins, 100 each: `/gpfs/fs1/work/manab/ff/3_eventforcings/2_precip_event_forcing_generation.m`
+* The actual event forcings are calculated for 11 percentiles, 50 bins, 100 each: `/gpfs/fs1/work/manab/ff/3_eventforcings/precip_event_forcing_generation_*.m`
 * The final event forcings are stored here: `/gpfs/fs1/work/manab/ff/3_eventforcings/precip_event_forcing` 
 * NOTE: qsub not working with MATLAB. Use screen
     * screen 
@@ -110,14 +105,20 @@ An annual maximum precipitation-frequency analysis using the `lmom` package in R
     * screen -r 44491 (reattaches screen)
     * Remember which login on cheyenne
     * Kill screen: Reattach -> ctrl+a, k
-* Put all of them in `allbins`: `cp **/*.nc allbins/`
+* Put all of them in `allbins`: `mkdir -p allbins && cp **/*.nc allbins/ && ls allbins | wc -l`
 
 ## Daily states
 * Directory: `/gpfs/fs1/work/manab/ff/4_dailystates`
+* Hardcoded output directory: `/gpfs/fs1/work/manab/ff/newfuse/newman/fuse/build/FUSE_SRC/FUSE_DMSL/fuse_rmse.f90`
+* Runs FUSE and cretes the job files required: `/gpfs/fs1/work/manab/ff/4_dailystates/1_create_states_anova.bash`
+* Submitting jobs: `qsub /gpfs/fs1/work/manab/ff/4_dailystates/3_qsubmit.sh`
+* To find quantiles of state files: `/gpfs/fs1/work/manab/ff/4_dailystates/state_quantiles.py`
+    * The output is stored here. These are relative links: /gpfs/fs1/work/manab/ff/4_dailystates/statequantiles
+* In case you want to see a plot of these distributions: `/gpfs/fs1/work/manab/ff/4_dailystates/statequantiles,ipynb`
 
 ## Event modeling
-10 model structures, 11 percentiles, 50 bins, 100 events
-
+* 10 model structures, 11 percentiles, 50 bins, 100 events
 * Directory: `/gpfs/fs1/work/manab/ff/5_eventmodeling`
+* Per model run: `/gpfs/fs1/work/manab/ff/5_eventmodeling`. Change model numbers manually and run
 
 ## Analysis of Variance (ANOVA)
